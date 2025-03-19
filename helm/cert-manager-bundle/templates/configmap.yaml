@@ -1,5 +1,4 @@
-# cert-manager-config configmap
-{{- if (($.Values.cert-manager).values) }}
+{{ if (($.Values.cert-manager).values) }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
