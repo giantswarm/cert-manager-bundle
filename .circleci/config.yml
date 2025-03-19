@@ -1,0 +1,21 @@
+version: 2.1
+orbs:
+  architect: giantswarm/architect@5.11.6
+
+workflows:
+  package-and-push-chart-on-tag:
+    jobs:
+    - architect/push-to-app-catalog:
+        context: architect
+        name: push-to-app-catalog
+        app_catalog: giantswarm-catalog
+        app_catalog_test: giantswarm-test-catalog
+        chart: cert-manager-bundle
+          # Trigger job on git tag.
+        filters:
+          tags:
+            only: /^v.*/
+          branches:
+            ignore:
+            - main
+            - master

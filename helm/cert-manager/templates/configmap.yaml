@@ -1,0 +1,12 @@
+{{- if (($.Values.cert-manager).values) }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    {{- include "labels.common" $ | nindent 4 }}
+  name: {{ $.Values.clusterID }}-cert-manager-config
+  namespace: {{ $.Release.Namespace }}
+data:
+  values: |
+  {{- (tpl ($.Values.cert-manager.values | toYaml | toString) $) | nindent 4 }}
+{{- end }}
