@@ -8,5 +8,5 @@ metadata:
   namespace: {{ $.Release.Namespace }}
 data:
   values: |
-  {{- (tpl ($.Values.cert-manager.values | toYaml | toString) $) | nindent 4 }}
+    {{- (tpl ($.Values.cert-manager.values | toYaml | toString) $) | nindent 4 }}
 {{- end }}
