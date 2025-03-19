@@ -3,7 +3,7 @@ kind: App
 metadata:
   labels:
     {{- include "labels.common" $ | nindent 4 }}
-  name: {{ $.Values.clusterID }}-cert-manager
+  name: {{ $.Values.clusterID }}-cert-manager-app
   namespace: {{ $.Release.Namespace }}
 spec:
   catalog: giantswarm
