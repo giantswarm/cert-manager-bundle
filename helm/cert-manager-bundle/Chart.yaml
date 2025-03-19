@@ -3,7 +3,7 @@ name: cert-manager-bundle
 description: cert-manager Bundle with crossplane resources
 home: https://github.com/giantswarm/cert-manager-bundle
 icon: https://s.giantswarm.io/app-icons/cert-manager/1/light.svg
-version: 0.0.1
+version: [[ .Version ]]
 annotations:
   application.giantswarm.io/team: shield
   application.giantswarm.io/in-cluster-app: "true"
