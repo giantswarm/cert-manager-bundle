@@ -29,7 +29,7 @@ spec:
   - kind: configMap
     name: {{ $.Values.clusterID }}-crossplane-config
     namespace: {{ $.Release.Namespace }}
-{{- if (($.Values.cert-manager).values) }}
+{{- if (($.Values.certManager).values) }}
   - kind: configMap
     name: {{ $.Values.clusterID }}-cert-manager-config
     namespace: {{ $.Release.Namespace }}

@@ -1,4 +1,4 @@
-{{ if (($.Values.cert-manager).values) }}
+{{- if (($.Values.certManager).values) }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -8,5 +8,5 @@ metadata:
   namespace: {{ $.Release.Namespace }}
 data:
   values: |
-    {{- (tpl ($.Values.cert-manager.values | toYaml | toString) $) | nindent 4 }}
+  {{- (tpl ($.Values.certManager.values | toYaml | toString) $) | nindent 4 }}
 {{- end }}

@@ -1,4 +1,4 @@
 name: cert-manager-bundle
 serviceType: managed
 
-cert-manager: {}
+certManager: {}
