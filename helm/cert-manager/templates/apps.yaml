@@ -22,9 +22,9 @@ spec:
     secret:
       name: {{ $.Values.clusterID }}-kubeconfig
       namespace: {{ $.Release.Namespace}}
-  name: cert-manager
+  name: cert-manager-app
   namespace: kube-system
-  version: 0.14.0
+  version: 3.9.0
   extraConfigs:
   - kind: configMap
     name: {{ $.Values.clusterID }}-crossplane-config
@@ -34,34 +34,6 @@ spec:
     name: {{ $.Values.clusterID }}-cert-manager-config
     namespace: {{ $.Release.Namespace }}
 {{- end }}
----
-apiVersion: application.giantswarm.io/v1alpha1
-kind: App
-metadata:
-  labels:
-    {{- include "labels.common" $ | nindent 4 }}
-  name: {{ $.Values.clusterID }}-capa-cert-manager-taint-remover
-  namespace: {{ $.Release.Namespace }}
-spec:
-  catalog: giantswarm
-  config:
-    configMap:
-      name: {{ $.Values.clusterID }}-cluster-values
-      namespace: {{ $.Release.Namespace }}
-  install:
-    timeout: "10m"
-  upgrade:
-    timeout: "10m"
-  kubeConfig:
-    context:
-      name: {{ $.Values.clusterID }}-admin@{{ $.Values.clusterID }}
-    inCluster: false
-    secret:
-      name: {{ $.Values.clusterID }}-kubeconfig
-      namespace: {{ $.Release.Namespace}}
-  name: capa-cert-manager-taint-remover
-  namespace: kube-system
-  version: 0.4.0
 ---
 apiVersion: application.giantswarm.io/v1alpha1
 kind: App
@@ -81,7 +53,7 @@ spec:
     inCluster: true
   name: cert-manager-crossplane-resources
   namespace: {{ $.Release.Namespace }}
-  version: 0.1.3
+  version: 0.0.1
   extraConfigs:
   - kind: configMap
     name: {{ $.Values.clusterID }}-crossplane-config
