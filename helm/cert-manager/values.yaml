@@ -1,8 +1,4 @@
 name: cert-manager-bundle
 serviceType: managed
 
-project:
-  branch: "[[ .Branch ]]"
-  commit: "[[ .SHA ]]"
-
 cert-manager: {}
