@@ -22,7 +22,7 @@ spec:
     secret:
       name: {{ $.Values.clusterID }}-kubeconfig
       namespace: {{ $.Release.Namespace}}
-  name: cert-manager-app
+  name: cert-manager
   namespace: kube-system
   version: 3.9.0
   extraConfigs:
