@@ -8,13 +8,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
-
-## [0.0.1] - 2025-03-19
-
-## [0.0.1] - 2025-03-19
-
-
-
-[Unreleased]: https://github.com/giantswarm/cert-manager-bundle/compare/v0.0.1...HEAD
-[0.0.1]: https://github.com/giantswarm/cert-manager-bundle/compare/v0.0.1...v0.0.1
-[0.0.1]: https://github.com/giantswarm/cert-manager-bundle/releases/tag/v0.0.1
